@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.net.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="791.0" prefWidth="1228.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+   <children>
+      <SplitPane dividerPositions="0.22512234910277323" prefHeight="414.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Label layoutX="136.0" layoutY="712.0" prefHeight="85.0" prefWidth="144.0" text="Label" />
+                  <Button fx:id="menuRegistration" layoutX="10.0" layoutY="251.0" mnemonicParsing="false" onAction="#menuRegistrationPress" prefHeight="50.0" prefWidth="252.0" text="Регистрация студента" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="255.0" />
+                  <Button fx:id="reportButton" layoutX="10.0" layoutY="183.0" mnemonicParsing="false" onAction="#reportPress" prefHeight="50.0" prefWidth="252.0" text="Отметить посещаемость" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="185.0" />
+                  <Button fx:id="checkButton" layoutX="10.0" layoutY="114.0" mnemonicParsing="false" onAction="#checkPress" prefHeight="50.0" prefWidth="252.0" text="Проверка" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="115.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="109.0" fitWidth="263.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <AnchorPane fx:id="reportPane" layoutX="379.0" layoutY="295.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                     <children>
+                        <VBox prefHeight="219.0" prefWidth="876.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0">
+                           <children>
+                              <AnchorPane prefHeight="284.0" prefWidth="876.0">
+                                 <children>
+                                    <Button fx:id="endReport" layoutX="709.0" layoutY="216.0" mnemonicParsing="false" onAction="#createReport" prefHeight="46.0" prefWidth="153.0" text="Завершить отчет" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+                                    <Label layoutX="50.0" layoutY="31.0" text="Преподователь" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="25.0" />
+                                    <Label fx:id="prepod" layoutX="188.0" layoutY="31.0" text="Label" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="25.0" />
+                                    <Label layoutX="43.0" layoutY="85.0" text="Предмет" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="65.0" />
+                                    <Label fx:id="subject" layoutX="229.0" layoutY="75.0" text="Label" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="65.0" />
+                                    <Label layoutX="61.0" layoutY="138.0" text="Тип занятия" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="105.0" />
+                                    <Label fx:id="type" layoutX="205.0" layoutY="149.0" text="Label" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="105.0" />
+                                    <Button fx:id="addGroupButton" layoutX="18.0" layoutY="231.0" mnemonicParsing="false" text="Отметить отсутствующую группу" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" />
+                                    <Button fx:id="cancelReport" layoutX="584.0" layoutY="216.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="107.0" text="Отмена" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="180.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                        <TabPane fx:id="studentTabPane" layoutX="93.0" layoutY="328.0" prefHeight="471.0" prefWidth="816.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                          <tabs>
+                            <Tab text="Untitled Tab 1">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ListView prefHeight="407.0" prefWidth="816.0" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Untitled Tab 2">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="AnchorPane" fx:id="registrationPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" styleClass="background" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="150.0">
+                     <children>
+                        <AnchorPane id="anchorPane2" fx:id="loginPane" prefHeight="300.0" prefWidth="500.0" styleClass="top-segment" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox id="VBox" alignment="CENTER" prefHeight="300.0" prefWidth="421.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane id="AnchorPane" prefHeight="180.0" prefWidth="430.0">
+                                       <children>
+                                          <Label id="label1" layoutX="14.0" layoutY="67.0" text="ФИО студента" />
+                                          <TextField id="textField1" fx:id="studName" layoutY="86.0" prefWidth="415.0" promptText="Пример: Иванов Иван Иванович" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" />
+                                          <Label id="label1" layoutX="14.0" layoutY="139.0" text="Группа" />
+                                          <TextField id="textField1" fx:id="studGroup" layoutX="12.0" layoutY="162.0" prefWidth="415.0" promptText="Пример: ИКБ-41" />
+                                          <Label fx:id="studId" layoutX="284.0" layoutY="14.0" prefHeight="25.0" prefWidth="136.0" text="ff" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <Button id="button1" fx:id="login" defaultButton="true" layoutX="197.0" onAction="#processLogin" prefHeight="70.0" prefWidth="263.0" text="Зарегистрировать" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="30.0" />
+                        <HBox id="hBox1" alignment="CENTER" prefHeight="25.0" prefWidth="418.0" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="41.0">
+                           <children>
+                              <Label id="label2" fx:id="errorMessage" textFill="#c90505" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="cancelRegistrationButton" cancelButton="true" layoutX="31.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelRegistration" prefHeight="70.0" prefWidth="136.0" text="Отмена" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="325.0" />
+                        <Button fx:id="lock" mnemonicParsing="false" onAction="#unlockPressed" styleClass="unlock-button" text="Click to Unlock" visible="false">
+                           <graphic>
+                              <ImageView id="lock" pickOnBounds="true">
+                                 <image>
+                                    <Image preserveRatio="true" smooth="true" url="@../../../../../zzzworkspace1/UnlockCustom/src/unlock/lock.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Rectangle fx:id="unlocktop" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="250.0" stroke="BLACK" strokeType="INSIDE" styleClass="unlock-top" width="500.0" AnchorPane.bottomAnchor="255.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Rectangle fx:id="unlockbottom" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="250.0" layoutY="255.0" stroke="BLACK" strokeType="INSIDE" styleClass="unlock-bottom" width="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <Button fx:id="lock" disable="true" layoutX="106.0" layoutY="208.0" mnemonicParsing="false" onAction="#unlockPressed" prefHeight="85.0" prefWidth="288.0" styleClass="unlock-button" text="Приподнесите карту к считывателю" textAlignment="CENTER" visible="true" wrapText="true" AnchorPane.bottomAnchor="207.0" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="208.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <stylesheets>
+                        <URL value="@Login.css" />
+                        <URL value="@Unlock.css" />
+                     </stylesheets>
+                  </AnchorPane>
+                  <AnchorPane fx:id="createReportPane" focusTraversable="true" layoutY="178.0" prefHeight="354.0" prefWidth="646.0" visible="false" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="178.0">
+                     <children>
+                        <Button fx:id="startReportButton" disable="true" layoutX="406.0" layoutY="292.0" mnemonicParsing="false" onAction="#startReport" prefHeight="50.0" prefWidth="160.0" text="Создать отчет" textAlignment="CENTER" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="50.0" />
+                        <Button fx:id="cancelStart" layoutX="61.0" layoutY="299.0" mnemonicParsing="false" onAction="#pressCancelStart" prefHeight="50.0" prefWidth="160.0" text="Отмена" textAlignment="CENTER" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="50.0" />
+                        <VBox layoutX="20.0" layoutY="66.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="75.0">
+                           <children>
+                              <AnchorPane prefHeight="160.0" prefWidth="606.0">
+                                 <children>
+                                    <Label layoutX="41.0" layoutY="23.0" text="Преподователь" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="23.0" />
+                                    <Label layoutX="41.0" layoutY="73.0" text="Предмет" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="73.0" />
+                                    <Label layoutX="41.0" layoutY="123.0" text="Тип занятия" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="123.0" />
+                                    <Button fx:id="addPrepodReportButton" layoutX="456.0" layoutY="14.0" mnemonicParsing="false" onAction="#addPrepod" prefHeight="40.0" prefWidth="136.0" text="добавить преподователя" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="addSubjectButton" disable="true" layoutX="456.0" layoutY="64.0" mnemonicParsing="false" onAction="#addSubject" prefHeight="40.0" prefWidth="136.0" text="добавить предмет" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="64.0">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Button>
+                                    <ComboBox fx:id="typeBox" disable="true" layoutX="164.0" layoutY="124.0" onAction="#chooseType" prefHeight="31.0" prefWidth="263.0" promptText="Выберите тип занятия" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="173.0" AnchorPane.topAnchor="118.0" />
+                                    <ComboBox fx:id="subjectBox" disable="true" layoutX="170.0" layoutY="69.0" onAction="#chooseSubject" prefHeight="31.0" prefWidth="263.0" promptText="Выберите предмет" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="173.0" AnchorPane.topAnchor="68.0" />
+                                    <ComboBox fx:id="prepodBox" layoutX="170.0" layoutY="19.0" onAction="#choosePrepod" prefHeight="31.0" prefWidth="263.0" promptText="Выберите преподователя" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="173.0" AnchorPane.topAnchor="18.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                        <Label layoutX="42.0" layoutY="23.0" prefHeight="43.0" prefWidth="563.0" text="Создание отчета посещаемости" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="42.0" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="20.0">
+                           <font>
+                              <Font name="Constantia Bold" size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="dataPane" layoutX="314.0" layoutY="244.0" prefHeight="230.0" prefWidth="200.0" visible="false" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="250.0">
+                     <children>
+                        <VBox layoutX="98.0" layoutY="6.0" prefHeight="149.0" prefWidth="396.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="5.0">
+                           <children>
+                              <AnchorPane prefHeight="149.0" prefWidth="396.0">
+                                 <children>
+                                    <Label fx:id="dataLabel" layoutX="30.0" layoutY="28.0" prefHeight="21.0" prefWidth="136.0" text="Label" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="dataField" layoutX="20.0" layoutY="83.0" prefHeight="31.0" prefWidth="236.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </VBox>
+                        <Button fx:id="okData" layoutX="217.0" layoutY="149.0" mnemonicParsing="false" onAction="#okDataPress" prefHeight="30.0" prefWidth="85.0" text="OK" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="30.0" />
+                        <Button fx:id="cancelData" layoutX="15.0" layoutY="149.0" mnemonicParsing="false" onAction="#cancelDataPress" prefHeight="30.0" prefWidth="85.0" text="Отмена" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="30.0" />
+                        <Label fx:id="dataError" layoutX="196.0" layoutY="154.0" textFill="#e81111" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="145.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="warningPane" layoutX="312.0" layoutY="279.0" prefHeight="183.0" prefWidth="306.0" visible="false" AnchorPane.leftAnchor="312.0" AnchorPane.topAnchor="279.0">
+                     <children>
+                        <Label layoutX="47.0" layoutY="31.0" prefHeight="70.0" prefWidth="272.0" text="Label" textAlignment="CENTER" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="20.0" />
+                        <Button layoutX="241.0" layoutY="158.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="OK" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="30.0" />
+                        <Button layoutX="62.0" layoutY="158.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="Отмена" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</VBox>
